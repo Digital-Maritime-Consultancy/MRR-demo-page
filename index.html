@@ -1,0 +1,47 @@
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Maritime Resource Registry demo webpage</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="col-lg-12 text-center mt-5">
+    <h1>Maritime Resource Registry</h1>
+  </div>
+
+  <div class="col-lg-12 text-center mt-5">
+    <h2>Document search demonstration</h2>
+  </div>
+  <div class="col-md-4 offset-md-4 mt-5 border border-fail pt-3">
+    <span>General search</span>
+  <div class="input-group mb-3">
+    <input type="text" id="searchBox" class="form-control" placeholder="Search ......" aria-label="Recipient's username">
+    <div class="input-group-append">
+      <button id="searchButton"></button>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 offset-md-4 mt-5 border border-fail pt-3">
+    <span>Search by MRN</span>
+  <div class="input-group mb-3">
+    <input type="text" id="mrnSearchBox" class="form-control" placeholder="Search ......" aria-label="Recipient's username">
+    <div class="input-group-append">
+      <button id="mrnSearchButton">Search</button>
+    </div>
+    </div>
+  </div>
+  <script async src="https://js.sitesearch360.com/plugin/bundle/999.js"></script>
+  <script>
+    $("#mrnSearchBox").click(
+      function () {
+      $.get('/data.txt', function (data) {
+         words = data.split('\s');
+         alert(words);
+      });
+      });
+  </script>
+</body>
