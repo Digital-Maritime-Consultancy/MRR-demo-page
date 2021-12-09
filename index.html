@@ -5,16 +5,33 @@
 
   <title>Maritime Resource Registry demo webpage</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./styles.css"  />
 </head>
 <body>
-  <div class="col-lg-12 text-center mt-5">
-    <h1>Maritime Resource Registry</h1>
+  <div class="mega-container mc--cover" style="background-image: url(https://www.iala-aism.org/content/themes/redwire-iala/assets/images/cover/sea.jpg) !important;">
+
+    <header>
+    <!-- Logo -->
+    <div class="c-logo-container">
+        <h2 class="c-logo js-logo">
+            <a href="http://www.iala-aism.org" title="IALA">
+                <img src="https://www.iala-aism.org/content/themes/redwire-iala/assets/images/iala/logo.png" alt="IALA">
+            </a>
+        </h2>
+    </div>
+
+  </header>
+    <div class="stick-to-bottom">
+    <div class="title-section overflowfix">
+          <h1 class="page-title">Maritime Resource Registry</h1></div>
   </div>
 
-  <div class="col-lg-12 text-center mt-5">
-    <h2>Document search demonstration</h2>
+</div>
+
+  <div class="col-lg-12 text-center mt-5 sub-title">
+    <h4>Document search demonstration</h4>
   </div>
-  <div class="col-md-4 offset-md-4 mt-5 border border-fail pt-3">
+  <div class="col-md-8 offset-md-2 mt-5 border border-fail pt-3">
     <span>General search</span>
   <div class="input-group mb-3">
     <input type="text" id="searchBox" class="form-control">
@@ -24,12 +41,12 @@
     </div>
   </div>
 
-  <div class="col-md-4 offset-md-4 mt-5 border border-fail pt-3">
+  <div class="col-md-8 offset-md-2 mt-4 border border-fail pt-3">
     <span>Retrieve by MRN</span>
   <div class="input-group mb-3">
     <input type="text" id="mrnSearchBox" class="form-control" placeholder="MRN...">
     <div class="input-group-append">
-      <button class="btn btn-primary" id="mrnSearchButton">Retrieve</button>
+      <button id="mrnSearchButton" value="Search" style="font-size: 14px; border: 1px solid rgb(221, 221, 221); border-radius: 3px; cursor: pointer; color: rgb(255, 255, 255); min-width: 35px; background-color: rgb(0, 85, 145);"><img role="presentation" alt="" style="width:17px; height:17px" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgY2xhc3M9IiIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTUuNSAxNGgtLjc5bC0uMjgtLjI3QzE1LjQxIDEyLjU5IDE2IDExLjExIDE2IDkuNSAxNiA1LjkxIDEzLjA5IDMgOS41IDNTMyA1LjkxIDMgOS41IDUuOTEgMTYgOS41IDE2YzEuNjEgMCAzLjA5LS41OSA0LjIzLTEuNTdsLjI3LjI4di43OWw1IDQuOTlMMjAuNDkgMTlsLTQuOTktNXptLTYgMEM3LjAxIDE0IDUgMTEuOTkgNSA5LjVTNy4wMSA1IDkuNSA1IDE0IDcuMDEgMTQgOS41IDExLjk5IDE0IDkuNSAxNHoiLz48L3N2Zz4="></button>
     </div>
     </div>
   </div>
@@ -47,7 +64,9 @@
     function retrieveDoc() {
       const mrn = searchField.value;
       const url = json[mrn];
-      if (url) {
+      if (mrn.length ===0) {
+        alert(`Please enter MRN for retrieval.`);
+      } else if (url) {
         window.open(url, "_blank");
       } else {
         alert(`${mrn} was not found!`);

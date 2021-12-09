@@ -1,0 +1,44 @@
+.page-title {
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.c-logo img, .c-logo svg {
+    transition: width .15s ease-out;
+    width: 130px;
+    height: auto;
+}
+
+.mc--cover {
+    padding-bottom: 200px;
+    background: transparent center center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.title-section {
+    text-align: center;
+}
+
+.sub-title h4 {
+    color: #575756;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-family: 'Avenir LT W01_85 Heavy1475544', sans-serif;
+    font-size: 24px;
+}
+
+.stick-to-bottom {
+    bottom: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.btn-color {
+  background-color: #005591;
+  border-color: #005591;
+}
